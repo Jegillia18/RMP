@@ -103,6 +103,7 @@ kindofendwords = unique(endwords);
 placeoffirststartword = zeros(1,length(kindofendwords));
 placeofallendwords = cell(1,length(kindofendwords));
 placeofallstartwords = cell(1,length(kindofendwords));
+    
 for n=1:length(kindofendwords)
     lengthWord = length(cell2mat(kindofendwords(n)));
     placeoffirststartword(n) = find(strncmp(word,kindofendwords(n),lengthWord),1);
