@@ -3,7 +3,7 @@
 
 %1=HS
 %0=TO
-%% Declare Variablse
+%% Declare Variables
 Left_period = [];
 Time_bin = [];
 Left_Hipbin = [];
@@ -16,7 +16,7 @@ acost = [];
 asint = [];
 
 %% Left Foot
-Pelvis_x=Pelvis(:,1);
+Pelvis_x = Pelvis(:,1);
 
 Left_foot_x = LeftFoot(:,1);
 Left_foot_z = LeftFoot(:,3);
@@ -98,4 +98,6 @@ end
 A = sqrt(acost.^2+asint.^2);
 
 ACC = sum(A)/FRM;
+
+
 

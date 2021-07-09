@@ -48,9 +48,9 @@ for n = 4:nSamples;                                                         %Fir
     
 %     %%Spinal Segments   
     %Pelvis
-    Pelvis(n-3,1)=tree.subject.frames.frame(n).position(1);    %X  
-    Pelvis(n-3,2)=tree.subject.frames.frame(n).position(2);    %Y
-    Pelvis(n-3,3)=tree.subject.frames.frame(n).position(3);    %Z
+    Pelvis(n-3,1)=tree.segmentData(n).position(1);    %X  
+    Pelvis(n-3,2)=tree.segmentData(1).position(2);    %Y
+    Pelvis(n-3,3)=tree.segmentData(1).position(3);    %Z
 %     
 %     %L5
 %     L5(n-3,1)=tree.subject.frames.frame(n).position(4);    %X
@@ -126,46 +126,46 @@ for n = 4:nSamples;                                                         %Fir
 %     
     %%Right Lower Body
     %RightUpperLeg
-    RightUpperLeg(n-3,1)=tree.subject.frames.frame(n).position(46);   %X 
-    RightUpperLeg(n-3,2)=tree.subject.frames.frame(n).position(47);   %Y
-    RightUpperLeg(n-3,3)=tree.subject.frames.frame(n).position(48);   %Z
-    
-    %RightLowerLeg
-    RightLowerLeg(n-3,1)=tree.subject.frames.frame(n).position(49);  %X 
-    RightLowerLeg(n-3,2)=tree.subject.frames.frame(n).position(50);  %Y
-    RightLowerLeg(n-3,3)=tree.subject.frames.frame(n).position(51);  %Z
-    
-    %RightFoot
-    RightFoot(n-3,1)=tree.subject.frames.frame(n).position(52); %X 
-    RightFoot(n-3,2)=tree.subject.frames.frame(n).position(53); %Y
-    RightFoot(n-3,3)=tree.subject.frames.frame(n).position(54); %Z
-    
-    %RightToe
-    RightToe(n-3,1)=tree.subject.frames.frame(n).position(55);  %X 
-    RightToe(n-3,2)=tree.subject.frames.frame(n).position(56);  %Y
-    RightToe(n-3,3)=tree.subject.frames.frame(n).position(57);  %Z
-    
-    %Left Lower Body
-    %LeftUpperLeg    
-    LeftUpperLeg(n-3,1)=tree.subject.frames.frame(n).position(58);    %X 
-    LeftUpperLeg(n-3,2)=tree.subject.frames.frame(n).position(59);    %Y
-    LeftUpperLeg(n-3,3)=tree.subject.frames.frame(n).position(60);    %Z
-    
-    %LeftLowerLeg
-    LeftLowerLeg(n-3,1)=tree.subject.frames.frame(n).position(61);   %X
-    LeftLowerLeg(n-3,2)=tree.subject.frames.frame(n).position(62);   %Y
-    LeftLowerLeg(n-3,3)=tree.subject.frames.frame(n).position(63);   %Z
-    
-    %LeftFoot
-    LeftFoot(n-3,1)=tree.subject.frames.frame(n).position(64);  %X
-    LeftFoot(n-3,2)=tree.subject.frames.frame(n).position(65);  %Y
-    LeftFoot(n-3,3)=tree.subject.frames.frame(n).position(66);  %Z
-   
-    %LeftToe
-    LeftToe(n-3,1)=tree.subject.frames.frame(n).position(67);   %X
-    LeftToe(n-3,2)=tree.subject.frames.frame(n).position(68);   %Y
-    LeftToe(n-3,3)=tree.subject.frames.frame(n).position(69);   %Z 
-    
+%     RightUpperLeg(n-3,1)=tree.subject.frames.frame(n).position(46);   %X 
+%     RightUpperLeg(n-3,2)=tree.subject.frames.frame(n).position(47);   %Y
+%     RightUpperLeg(n-3,3)=tree.subject.frames.frame(n).position(48);   %Z
+%     
+%     %RightLowerLeg
+%     RightLowerLeg(n-3,1)=tree.subject.frames.frame(n).position(49);  %X 
+%     RightLowerLeg(n-3,2)=tree.subject.frames.frame(n).position(50);  %Y
+%     RightLowerLeg(n-3,3)=tree.subject.frames.frame(n).position(51);  %Z
+%     
+%     %RightFoot
+%     RightFoot(n-3,1)=tree.subject.frames.frame(n).position(52); %X 
+%     RightFoot(n-3,2)=tree.subject.frames.frame(n).position(53); %Y
+%     RightFoot(n-3,3)=tree.subject.frames.frame(n).position(54); %Z
+%     
+%     %RightToe
+%     RightToe(n-3,1)=tree.subject.frames.frame(n).position(55);  %X 
+%     RightToe(n-3,2)=tree.subject.frames.frame(n).position(56);  %Y
+%     RightToe(n-3,3)=tree.subject.frames.frame(n).position(57);  %Z
+%     
+%     %Left Lower Body
+%     %LeftUpperLeg    
+%     LeftUpperLeg(n-3,1)=tree.subject.frames.frame(n).position(58);    %X 
+%     LeftUpperLeg(n-3,2)=tree.subject.frames.frame(n).position(59);    %Y
+%     LeftUpperLeg(n-3,3)=tree.subject.frames.frame(n).position(60);    %Z
+%     
+%     %LeftLowerLeg
+%     LeftLowerLeg(n-3,1)=tree.subject.frames.frame(n).position(61);   %X
+%     LeftLowerLeg(n-3,2)=tree.subject.frames.frame(n).position(62);   %Y
+%     LeftLowerLeg(n-3,3)=tree.subject.frames.frame(n).position(63);   %Z
+%     
+%     %LeftFoot
+%     LeftFoot(n-3,1)=tree.subject.frames.frame(n).position(64);  %X
+%     LeftFoot(n-3,2)=tree.subject.frames.frame(n).position(65);  %Y
+%     LeftFoot(n-3,3)=tree.subject.frames.frame(n).position(66);  %Z
+%    
+%     %LeftToe
+%     LeftToe(n-3,1)=tree.subject.frames.frame(n).position(67);   %X
+%     LeftToe(n-3,2)=tree.subject.frames.frame(n).position(68);   %Y
+%     LeftToe(n-3,3)=tree.subject.frames.frame(n).position(69);   %Z 
+%     
     
     
 end
