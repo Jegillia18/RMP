@@ -95,4 +95,4 @@ end
 
 A = sqrt(acost.^2+asint.^2);
 
-ACC = sum(A)/FRM;
+Right_ACC = sum(A)/FRM;
