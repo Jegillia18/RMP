@@ -18,14 +18,15 @@ asint = [];
 Pelvis_x=Pelvis(:,1);                                                      % creates a variable for x plane data for the pelvis segment
 
 
-Right_foot_x=RightFoot(:,1);                                               % creates a variable for x plane data for the foot segment
-Right_foot_z=RightFoot(:,3);                                               % creates a variable for z plane data for the foot segment
+Right_foot_x=RightF(:,1);                                               % creates a variable for x plane data for the foot segment
+Right_foot_z=RightF(:,3);                                               % creates a variable for z plane data for the foot segment
 
 Right_T=Right_foot_x-Pelvis_x;                                             % foot in relation to pelvis
 
 
 Right_HS=islocalmax(Right_T,'MinProminence',.1);                           % pulls peaks of foot pevlis relational data which cooresponds to HS
 Right_HS_Time = time(Right_HS);                                            % Pulls times of HS based on peaks. HS are 1 and finds corresponding time point
+index = 1:length(time);
 Right_HS_Index = index(Right_HS);                                          % Pulls discrete index locatios of HS
 
 

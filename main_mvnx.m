@@ -54,4 +54,6 @@ if isfield(tree.segmentData,'position')
 end
 %%
 run('SegmentPosition.m');
+run('JointAngle.m');
+time = str2double({tree.frame.time})/1000;
 
