@@ -1,7 +1,7 @@
 %% Load data
 % Change the filename here to the name of the file you would like to import
-clear;
-clc;
+% clear;
+% clc;
 
 tree = load_mvnx('SCIMS_703_001_S1_pre_walk-1');
 
