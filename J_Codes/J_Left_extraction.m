@@ -4,12 +4,14 @@
 %1=HS
 %0=TO
 
-Pelvis_x=Pelvis(:,1);
-%% Left Foot
-Left_foot_x = LeftFoot(:,1);
-Left_foot_z = LeftFoot(:,3);
 
-Left_T = Left_foot_x-Pelvis_x;   %foot in relation to pelvis
+%% Left Foot
+Pelvis_x=Pelvis(:,1);
+
+Left_foot_x = LeftF(:,1); %CHANGED NAME - Matches Left_Extraction original
+Left_foot_z = LeftF(:,3); %CHANGED NAME - Matches Left_Extraction original
+
+Left_T = Left_foot_x - Pelvis_x;   %foot in relation to pelvis
 
 
 Left_HS = islocalmax(Left_T,'MinProminence',.1); %pulls peaks which are HS 

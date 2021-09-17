@@ -4,12 +4,13 @@
 %1=HS
 %0=TO
 
-Pelvis_x=Pelvis(:,1);
-%% Right
-Right_foot_x=RightFoot(:,1);
-Right_foot_z=RightFoot(:,3);
 
-Right_T=Right_foot_x-Pelvis_x;          %foot in relation to pelvis
+%% Right
+Pelvis_x = Pelvis(:,1);
+Right_foot_x = RightF(:,1);
+Right_foot_z = RightF(:,3);
+
+Right_T = Right_foot_x - Pelvis_x;          %foot in relation to pelvis
 
 
 Right_HS=islocalmax(Right_T,'MinProminence',.1); %pulls peaks which are HS 
