@@ -3,7 +3,7 @@
 % clear;
 % clc;
 
-tree = load_mvnx('P2_T1_R_D1');
+tree = load_mvnx('SCIMS_703_001_S1_pre_walk-1');
 
 %% Read some basic data from the file
 mvnxVersion = tree.metaData.mvnx_version; % version of the MVN Studio used during recording
