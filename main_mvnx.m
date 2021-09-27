@@ -1,9 +1,20 @@
 %% Load data
 % Change the filename here to the name of the file you would like to import
-% clear;
-% clc;
 
-tree = load_mvnx('SCIMS_703_001_S1_pre_walk-1');
+
+%clear
+%clc
+
+%set = [10:31,35:45,48:56,59:65,67,68,72,75,77,78,79,80]; What is Jasmine's
+%set??
+
+% for y = 1:length(set)
+%     p = set(y);
+%     
+%      data = sprintf('691_P%d_pre_corticalexcitability-MCD data_thenar.xlsx',p);
+% 
+% %tree = load_mvnx('SCIMS_703_001_S1_pre_walk-1');
+% end
 
 %% Read some basic data from the file
 mvnxVersion = tree.metaData.mvnx_version; % version of the MVN Studio used during recording

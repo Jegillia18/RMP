@@ -15,6 +15,7 @@ Right_T = Right_foot_x - Pelvis_x;          %foot in relation to pelvis
 
 Right_HS=islocalmax(Right_T,'MinProminence',.1); %pulls peaks which are HS 
 Right_HS_Time = time(Right_HS);                        %Pulls times of HS based on peaks. HS are 1 and finds corresponding time point     
+index = 1:length(time);
 Right_HS_Index = index(Right_HS);
 
 
