@@ -2,19 +2,25 @@
 % Change the filename here to the name of the file you would like to import
 
 
-%clear
-%clc
+clear
+clc
 
-%set = [10:31,35:45,48:56,59:65,67,68,72,75,77,78,79,80]; What is Jasmine's
-%set??
+set = [2];%, 4, 5, 6, 8, 9, 13, 14, 15, 16, 18]; % alter here for participant specific ID's
+tree.data = table;
 
-% for y = 1:length(set)
-%     p = set(y);
-%     
-%      data = sprintf('691_P%d_pre_corticalexcitability-MCD data_thenar.xlsx',p);
-% 
-% %tree = load_mvnx('SCIMS_703_001_S1_pre_walk-1');
-% end
+            
+% This set for all other trials
+for y = 1:length(set)
+    p = set(y);
+    for t = 1:4
+       for d = 1:3
+           try
+           tree = load_mvnx(sprintf('P0%d_T%d_WALK%d',p,t,d));
+           catch 
+               try
+               tree = load_mvnx(sprintf('P%d_T%d_WALK%d',p,t,d)); 
+               catch
+             
 
 %% Read some basic data from the file
 mvnxVersion = tree.metaData.mvnx_version; % version of the MVN Studio used during recording
@@ -45,6 +51,8 @@ end
 %retrieve the data frames from the subject
 nSamples = length(tree.segmentData);
 
+
+
 %% Read the data from the structure e.g. segment 1
 if isfield(tree.segmentData,'position')
     % Plot position of segment 1
@@ -63,8 +71,14 @@ if isfield(tree.segmentData,'position')
 %     zlabel('z')
 %     title ('Displacement of first segment in space')
 end
+               end
+           end
+       end
+    end
+end
+
 %%
-run('SegmentPosition.m');
-run('JointAngle.m');
-time = str2double({tree.frame.time})/1000;
+% run('SegmentPosition.m');
+% run('JointAngle.m');
+% time = str2double({tree.frame.time})/1000;
 
