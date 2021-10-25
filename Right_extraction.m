@@ -45,7 +45,6 @@ period_mean = mean(Right_period);                                          % Fin
 for i=1:length(Right_HS_Index_mid)-1                                           % creates cell arrays for the times from start and end of each step
     Time_bin{i} = time(Right_HS_Index_mid(i):(Right_HS_Index_mid(i+1)-1));
 end
-
                                                          
 jRightHip = jRightHip(:,end);                                              % Pulls Z plane joint angle data
 
