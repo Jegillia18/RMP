@@ -156,12 +156,23 @@ Left_Ankle_Angle = Left_Cycle(:,2);
 % Left_Hip_Event = Left_Hip(Left_Angle_Event_Finder);                     %Hip angle at toe off and IC from Left Cycle variable
 
 %Left_Peak_Dorsi = [];
+if Left_Cycle(1,1) == 1
+    
+for i=3:2:length(Left_Ankle_Angle)
+Left_Peak_Ankle = max(Left_Ankle(Left_Ankle_Angle(i-1):Left_Ankle_Angle(i)));
+
+data.(['Participant_',num2str(p),]).(['Trial_', num2str(t),]).(['WALK_', num2str(d),]).L(i,:) = Left_Peak_Ankle;
+%i = i + 2;
+end
+
+elseif Left_Cycle(1,1) == 0
 
 for i=2:2:length(Left_Ankle_Angle)
 Left_Peak_Ankle = max(Left_Ankle(Left_Ankle_Angle(i-1):Left_Ankle_Angle(i)));
 
 data.(['Participant_',num2str(p),]).(['Trial_', num2str(t),]).(['WALK_', num2str(d),]).L(i,:) = Left_Peak_Ankle;
 %i = i + 2;
+end
 end
 
 % NA_Fill = [nan; nan; nan]; %blank array to use as a fill for the inbetween variables that will be one less then the number of steps
@@ -268,11 +279,23 @@ Right_Ankle_Angle = Right_Cycle(:,2);
 
 %Left_Peak_Dorsi = [];
 
+if Right_Cycle(1,1) == 1
+    
+for i=3:2:length(Right_Ankle_Angle)
+Right_Peak_Ankle = max(Right_Ankle(Right_Ankle_Angle(i-1):Right_Ankle_Angle(i)));
+
+data.(['Participant_',num2str(p),]).(['Trial_', num2str(t),]).(['WALK_', num2str(d),]).R(i,:) = Right_Peak_Ankle;
+%i = i + 2;
+end
+
+elseif Right_Cycle(1,1) == 0
+
 for i=2:2:length(Right_Ankle_Angle)
 Right_Peak_Ankle = max(Right_Ankle(Right_Ankle_Angle(i-1):Right_Ankle_Angle(i)));
 
 data.(['Participant_',num2str(p),]).(['Trial_', num2str(t),]).(['WALK_', num2str(d),]).R(i,:) = Right_Peak_Ankle;
 %i = i + 2;
+end
 end
 
 % RPA_Knee = Right_Knee(RPA_I);                                              %knee angle at peak ankle
