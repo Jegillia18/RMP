@@ -49,6 +49,11 @@ end
 % TAL_Onset = [TAL1_onset_time; TAL2_onset_time; TAL_onset_time];
 
 TAL_Onset = TAL_onset_time;
+try
+    TAL_Onset_Value = TAL_y(TAL_Onset_Index);
+catch
+    TAL_Onset_Value = NaN;
+end
 %% Offset
 
  if isnan(TAL_Onset_Index) 
@@ -91,6 +96,11 @@ end
 
 % TAL_Offset = [TAL1_Offset_time; TAL2_Offset_time; TAL_Offset_time];
 TAL_Offset = TAL_Offset_time;
+try
+    TAL_Offset_Value = TAL_y(TAL_Offset_Index);
+catch
+    TAL_Offset_Value = NaN;
+end
 %% Offset from Marker
 
 if isnan(TAL_Onset_Index) 

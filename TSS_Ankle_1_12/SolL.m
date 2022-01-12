@@ -38,9 +38,9 @@ end
 end
 
 if ~isnan(SolL_Onset_Index)
-SolL_onset_time = SolL_x(SolL_Onset_Index);   %putting it in SolL time domain
+SolL_Onset_time = SolL_x(SolL_Onset_Index);   %putting it in SolL time domain
 else
-    SolL_onset_time = NaN;
+    SolL_Onset_time = NaN;
 %[~, SolL_trial] =  min(abs(Elbow - SolL_trial));  % finding the nearest corresponding time from SolL time domain to Elbow time domain
 end
 % if length(SolL_trial) ~= 1
@@ -48,7 +48,12 @@ end
 % end
 % SolL_Onset = [SolL1_onset_time; SolL2_onset_time; SolL_onset_time];
 
-SolL_Onset = SolL_onset_time;
+SolL_Onset = SolL_Onset_time;
+try
+    SolL_Onset_Value = SolL_y(SolL_Onset_Index);
+catch
+    SolL_Onset_Value = NaN;
+end
 %% Offset
 
  if isnan(SolL_Onset_Index) 
@@ -91,6 +96,11 @@ end
 
 % SolL_Offset = [SolL1_Offset_time; SolL2_Offset_time; SolL_Offset_time];
 SolL_Offset = SolL_Offset_time;
+try
+    SolL_Offset_Value = SolL_y(SolL_Offset_Index);
+catch
+    SolL_Offset_Value = NaN;
+end
 %% Offset from Marker
 
 if isnan(SolL_Onset_Index) 

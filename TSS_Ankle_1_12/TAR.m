@@ -49,6 +49,11 @@ end
 % TAR_Onset = [TAR1_onset_time; TAR2_onset_time; TAR_onset_time];
 
 TAR_Onset = TAR_onset_time;
+try
+    TAR_Onset_Value = TAR_y(TAR_Onset_Index);
+catch
+    TAR_Onset_Value = NaN;
+end
 %% Offset
 
  if isnan(TAR_Onset_Index) 
@@ -91,6 +96,11 @@ end
 
 % TAR_Offset = [TAR1_Offset_time; TAR2_Offset_time; TAR_Offset_time];
 TAR_Offset = TAR_Offset_time;
+try
+    TAR_Offset_Value = TAR_y(TAR_Offset_Index);
+catch
+    TAR_Offset_Value = NaN;
+end
 %% Offset from Marker
 
 if isnan(TAR_Onset_Index) 

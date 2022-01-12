@@ -49,6 +49,11 @@ end
 % SolR_Onset = [SolR1_onset_time; SolR2_onset_time; SolR_onset_time];
 
 SolR_Onset = SolR_onset_time;
+try
+    SolR_Onset_Value = SolR_y(SolR_Onset_Index);
+catch
+    SolR_Onset_Value = NaN;
+end
 %% Offset
 
  if isnan(SolR_Onset_Index) 
@@ -91,6 +96,11 @@ end
 
 % SolR_Offset = [SolR1_Offset_time; SolR2_Offset_time; SolR_Offset_time];
 SolR_Offset = SolR_Offset_time;
+try
+    SolR_Offset_Value = SolR_y(SolR_Offset_Index);
+catch
+    solR_Offset_Value = NaN;
+end
 %% Offset from Marker
 
 if isnan(SolR_Onset_Index) 

@@ -17,9 +17,9 @@ for i=1:length(participants)
             %cd 'C:\Users\cazmo\Documents\Rainmeter\Skins\Droptop Folders\Bookmarks\Subclinical EMG Analysis (1)\subclinical EMG individual trials'
          
         try       
-Pre_file = load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s));   
-        catch 
-Pre_file = load(sprintf('WFL_696_P%d_T%d_DF%d',p,t,s));  
+            Pre_file = load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s));   
+%         catch 
+%             Pre_file = load(sprintf('WFL_696_P%d_T%d_DF%d',p,t,s));  
         end
         
 %Pre_file.(['Participant_',(num2str(p)),]).(['Session_',(num2str(s)),])= load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s));
@@ -101,27 +101,44 @@ TAR_y = Pre_file.(TAR_Name).values;                                      %Saves 
 
 %Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).('Soleus_Right') = table();
 if (s == 1)||(s == 2)||(s == 3)
-Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Trail')(s,1) = convertCharsToStrings(['Trial_Left_',num2str(s),]);
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Trial')(s,1) = convertCharsToStrings(['Trial_Left_',num2str(s),]);
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Peak_EMG')(s,1) = SolL_peak;%; SolL_mean; SolL_T2P];
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Average_EMG')(s,1) = SolL_mean;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Time_to_Peak')(s,1) = SolL_T2P;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Onset_Time')(s,1) = SolL_Onset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Onset_Value')(s,1) = SolL_Onset_Value;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Offset_Time')(s,1) = SolL_Offset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Offset_Value')(s,1) = SolL_Offset_Value;
 
-Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Trail')(s,1) = convertCharsToStrings(['Trial_Left_',num2str(s),]);
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Trial')(s,1) = convertCharsToStrings(['Trial_Left_',num2str(s),]);
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Peak_EMG')(s,1) = TAL_peak;%; SolL_mean; SolL_T2P];
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Average_EMG')(s,1) = TAL_mean;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Time_to_Peak')(s,1) = TAL_T2P;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Onset_Time')(s,1) = TAL_onset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Onset_Value')(s,1) = TAL_Onset_Value;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Offset_Time')(s,1) = TAL_Offset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Offset_Value')(s,1) = TAL_Offset_Value;
 
 
 elseif (s == 4)||(s == 5)||(s == 6)
-Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Trail')(s,1) = convertCharsToStrings(['Trial_Right_',num2str(s),]);
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Trial')(s,1) = convertCharsToStrings(['Trial_Right_',num2str(s),]);
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Peak_EMG')(s,1) = SolR_peak;%; SolL_mean; SolL_T2P];
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Average_EMG')(s,1) = SolR_mean;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Time_to_Peak')(s,1) = SolR_T2P;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Onset_Time')(s,1) = SolR_onset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Onset_Value')(s,1) = SolR_Onset_Value;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Offset_Time')(s,1) = SolR_Offset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Offset_Value')(s,1) = solR_Offset_Value;
 
-Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Trail')(s,1) = convertCharsToStrings(['Trial_Right_',num2str(s),]);
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Trial')(s,1) = convertCharsToStrings(['Trial_Right_',num2str(s),]);
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Peak_EMG')(s,1) = TAR_peak;%; SolL_mean; SolL_T2P];
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Average_EMG')(s,1) = TAR_mean;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Time_to_Peak')(s,1) = TAR_T2P;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Onset_Time')(s,1) = TAR_onset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Onset_Value')(s,1) = TAR_Onset_Value;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Offset_Time')(s,1) = TAR_Offset_time;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Offset_Value')(s,1) = TAR_Offset_Value;
+
 end
           
 
