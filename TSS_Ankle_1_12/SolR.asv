@@ -8,7 +8,7 @@
 [~, SolR_Pre] =  min(abs(SolR_x - TFx_pre)); %this used to be SolR1_x i think i messed up, its just time should be fine
 %SolR_trial = SolR1_x(SolR_Marker_ind);
     if SolR_Pre ~= SolL_Pre
-        SolR_Pre = SolL_Pre;
+        SolR_Pre = SolR_Pre;
     end
 [~, SolR_post] =  min(abs(SolR_x - TFx_post));
 
@@ -102,7 +102,7 @@ SolR_Offset = SolR_Offset_time;
 try
     SolR_Offset_Value = SolR_y(SolR_Offset_Index);
 catch
-    SolR_Offset_Value = NaN;
+    solR_Offset_Value = NaN;
 end
 %% Offset from Marker
 

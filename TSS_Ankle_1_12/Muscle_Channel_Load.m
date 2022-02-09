@@ -2,7 +2,7 @@
 clear;
 clc;
 warning off
-participants = [2 4 5 6 8 9 10 13 14 15 16 18];
+participants = [18];%[2 4 5 6 8 9 10 13 14 15 16 18];
 Data = [];
 
 for i=1:length(participants)
@@ -17,9 +17,10 @@ for i=1:length(participants)
             %cd 'C:\Users\cazmo\Documents\Rainmeter\Skins\Droptop Folders\Bookmarks\Subclinical EMG Analysis (1)\subclinical EMG individual trials'
          
         try       
-            Pre_file = load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s));   
+            Pre_file = load(sprintf('P%d_T%d_R_DF%d',p,t,s));   
 %         catch 
-%             Pre_file = load(sprintf('WFL_696_P%d_T%d_DF%d',p,t,s));  
+             %Pre_file = load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s)); 
+        catch
         end
         
 %Pre_file.(['Participant_',(num2str(p)),]).(['Session_',(num2str(s)),])= load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s));
@@ -128,7 +129,7 @@ Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Time_to
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Onset_Time')(s,1) = SolR_onset_time;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Onset_Value')(s,1) = SolR_Onset_Value;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Offset_Time')(s,1) = SolR_Offset_time;
-Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Offset_Value')(s,1) = solR_Offset_Value;
+Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Soleus.('Offset_Value')(s,1) = SolR_Offset_Value;
 
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Trial')(s,1) = convertCharsToStrings(['Trial_Right_',num2str(s),]);
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Peak_EMG')(s,1) = TAR_peak;%; SolL_mean; SolL_T2P];

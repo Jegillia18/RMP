@@ -7,7 +7,9 @@
 
 [~, SolL_Pre] =  min(abs(SolL_x - TFx_pre)); %this used to be SolL1_x i think i messed up, its just time should be fine
 %SolL_trial = SolL1_x(SolL_Marker_ind);
-    
+    if SolL_Pre ~= SolR_Pre
+        SolL_Pre = SolR_Pre;
+    end
 [~, SolL_post] =  min(abs(SolL_x - TFx_post));
 
 SolL_STD = std(SolL_y(SolL_Pre-1:SolL_Marker_ind-1));

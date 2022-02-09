@@ -52,7 +52,7 @@ ind(ind==0)=[];
 dur = ind_end - ind;
 
 ind_post = ind_end + dur;
-ind_pre = ind - dur;
+ind_pre = (ind - dur);
 
 Marker_start_time = TF_x;
 Marker_end_time = TF_x_end;
@@ -82,7 +82,7 @@ post_check = length(Marker_y) - ind_end;
 
 
 
-% 
+
 % plot(Marker_x, Marker_y)
 % hold on
 % plot(TF_x,TF_y,'o')
