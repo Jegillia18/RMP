@@ -17,7 +17,7 @@ for i=1:length(participants)
             %cd 'C:\Users\cazmo\Documents\Rainmeter\Skins\Droptop Folders\Bookmarks\Subclinical EMG Analysis (1)\subclinical EMG individual trials'
          
         try       
-            Pre_file = load(sprintf('P%d_T%d_R_DF%d',p,t,s));   
+            Pre_file = load(sprintf('P%d_T%d_DF%d',p,t,s));   
 %         catch 
              %Pre_file = load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s)); 
         catch
