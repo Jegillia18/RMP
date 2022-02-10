@@ -5,8 +5,9 @@
 
 [~, SolL_Marker_end] =  min(abs(SolL_x - Marker_end_time)); 
 
-[~, SolL_Pre] =  min(abs(SolL_x - TFx_pre)); %this used to be SolL1_x i think i messed up, its just time should be fine
+%[~, SolL_Pre] =  min(abs(SolL_x - TFx_pre)); %this used to be SolL1_x i think i messed up, its just time should be fine
 %SolL_trial = SolL1_x(SolL_Marker_ind);
+SolL_Pre = 2;
     
 [~, SolL_post] =  min(abs(SolL_x - TFx_post));
 
