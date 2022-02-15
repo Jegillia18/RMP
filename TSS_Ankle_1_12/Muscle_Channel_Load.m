@@ -2,7 +2,7 @@
 clear;
 clc;
 warning off
-participants = [18];%[2 4 5 6 8 9 10 13 14 15 16 18];
+participants = [18];%[2 4 5 6 8 9 10 13 14 15 16 18]; % This line should be edited to include all 18 participants
 Data = [];
 
 for i=1:length(participants)
@@ -17,7 +17,7 @@ for i=1:length(participants)
             %cd 'C:\Users\cazmo\Documents\Rainmeter\Skins\Droptop Folders\Bookmarks\Subclinical EMG Analysis (1)\subclinical EMG individual trials'
          
         try       
-            Pre_file = load(sprintf('P%d_T%d_DF%d',p,t,s));   
+            Pre_file = load(sprintf('P%d_T%d_DF%d',p,t,s));   % Depending on file naming convention this line should be updated
 %         catch 
              %Pre_file = load(sprintf('WFL_696_P0%d_T%d_DF%d',p,t,s)); 
         catch
