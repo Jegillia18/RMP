@@ -2,7 +2,7 @@
 clear;
 clc;
 warning off
-participants = [2 4 5 6 8 9 10 13 14 15 16 18]; % This line should be edited to include all 18 participants
+participants = 2;%18;%[2 4 5 6 8 9 10 13 14 15 16 18]; % This line should be edited to include all 18 participants
 Data = [];
 
 cd 'C:\Users\jg300416\Documents\MATLAB\RMP\TSS_Ankle_1_12\Data_02_18';
@@ -41,7 +41,7 @@ Marker_y = Pre_file.(Marker_Name).values;                                  %Save
 %% Sol Right EMG for First Trial
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 SolL_Name = fieldnames(Pre_file);
-SolL_Name = SolL_Name{6};
+SolL_Name = SolL_Name{8}; %6 (If no glute) %8
 
 SolL_x = Pre_file.(SolL_Name).times;                                   %Saves the time axis from the Bicep data to a variable, labeled with x for axis it should be plotted on.
 SolL_y = Pre_file.(SolL_Name).values;                                  %Saves the bicep data for the elbow to a variable, labeled with y for axis it should be plotted on
@@ -49,7 +49,7 @@ SolL_y = Pre_file.(SolL_Name).values;                                  %Saves th
 %% %% Sol Left EMG for First Trial
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 SolR_Name = fieldnames(Pre_file);
-SolR_Name = SolR_Name{7};
+SolR_Name = SolR_Name{9}; %7 %9
 
 SolR_x = Pre_file.(SolR_Name).times;                                   %Saves the time axis from the Bicep data to a variable, labeled with x for axis it should be plotted on.
 SolR_y = Pre_file.(SolR_Name).values;                                  %Saves the bicep data for the elbow to a variable, labeled with y for axis it should be plotted on
@@ -57,7 +57,7 @@ SolR_y = Pre_file.(SolR_Name).values;                                  %Saves th
 %% Sol Right EMG for First Trial
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TAL_Name = fieldnames(Pre_file);
-TAL_Name = TAL_Name{8};%8
+TAL_Name = TAL_Name{10};%8 %10
 
 TAL_x = Pre_file.(TAL_Name).times;                                   %Saves the time axis from the Bicep data to a variable, labeled with x for axis it should be plotted on.
 TAL_y = Pre_file.(TAL_Name).values;                                  %Saves the bicep data for the elbow to a variable, labeled with y for axis it should be plotted on
@@ -65,7 +65,7 @@ TAL_y = Pre_file.(TAL_Name).values;                                  %Saves the 
 %% %% Sol Left EMG for First Trial
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TAR_Name = fieldnames(Pre_file);
-TAR_Name = TAR_Name{9};%9
+TAR_Name = TAR_Name{11};%9 %11
 
 TAR_x = Pre_file.(TAR_Name).times;                                   %Saves the time axis from the Bicep data to a variable, labeled with x for axis it should be plotted on.
 TAR_y = Pre_file.(TAR_Name).values;                                      %Saves the bicep data for the elbow to a variable, labeled with y for axis it should be plotted on
