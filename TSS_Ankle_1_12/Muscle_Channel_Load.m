@@ -16,8 +16,8 @@ for i=1:length(participants)
         
         for s = 1:6
            
-            %cd 'C:\Users\cazmo\Documents\Rainmeter\Skins\Droptop Folders\Bookmarks\Subclinical EMG Analysis (1)\subclinical EMG individual trials'
-         
+            cd 'C:\Users\jg300416\Documents\MATLAB\RMP\TSS_Ankle_1_12\Data_02_18';
+
         try       
             Pre_file = load(sprintf('P%d_T%d_DF%d',p,t,s));   % Depending on file naming convention this line should be updated
 %         catch 
@@ -141,6 +141,7 @@ Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterio
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Onset_Value')(s,1) = TAR_Onset_Value;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Offset_Time')(s,1) = TAR_Offset_time;
 Data.(['Participant_',num2str(p),]).(['Session_', num2str(t),]).Tibialis_Anterior.('Offset_Value')(s,1) = TAR_Offset_Value;
+
 
 end
           
