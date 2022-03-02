@@ -2,7 +2,7 @@
 clear;
 clc;
 warning off
-participants = 2;%18;%[2 4 5 6 8 9 10 13 14 15 16 18]; % This line should be edited to include all 18 participants
+participants = [2 4 5 6 8 9 13 14 15 16 18]; % This line should be edited to include all 18 participants
 Data = [];
 
 cd 'C:\Users\jg300416\Documents\MATLAB\RMP\TSS_Ankle_1_12\Data_02_18';
